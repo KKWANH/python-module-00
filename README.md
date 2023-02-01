@@ -53,3 +53,14 @@ Make a program that takes a string.
 Reverse and swap it's letter case and print them.
 - If argument is more that one, merge them.
 - If there's no arguments, don't print something.
+
+> :bulb:
+> **Examples**
+> ```shell
+> $> python3 exec.py 'Hello World!' | cat -e
+> !DLROw OLLEh$
+> $> python3 exec.py 'Hello' 'my Friend' | cat -e
+> DNEIRf YM OLLEh$
+> $> python3 exec.py
+> $>
+> ```
