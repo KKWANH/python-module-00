@@ -15,6 +15,7 @@
 - You can ask questions in [42AI](https://app.slack.com/client/T3T7KSKE3)/[42born2code](https://app.slack.com/client/T039P7U66)'s `#bootcamps` channel.
 - Any mistakes or issues? Please report 'em in [42AI's Github Channel Issue](https://github.com/42-AI/bootcamp_python/issues).
 - The project encourage you to create test programs just like old-push-swap. This means you will not be graded with the test program exists or not.
+
 ## Exercise 00
 |**link**|[ex00](ex00)|
 |----|----|
@@ -42,7 +43,7 @@ The main things that must be written in answer.txt
 - Freeze your python packages and their versions in a requirements.txt file you have to turn-in.
 
 ## Exercise 01
-|**link**|[ex00](ex00)|
+|**link**|[ex01](ex01)|
 |----|----|
 
 |Required File|
@@ -54,13 +55,46 @@ Reverse and swap it's letter case and print them.
 - If argument is more that one, merge them.
 - If there's no arguments, don't print something.
 
-> :bulb:
-> **Examples**
+> :bulb: Examples
 > ```shell
 > $> python3 exec.py 'Hello World!' | cat -e
 > !DLROw OLLEh$
 > $> python3 exec.py 'Hello' 'my Friend' | cat -e
 > DNEIRf YM OLLEh$
 > $> python3 exec.py
+> $>
+> ```
+
+## Exercise 02
+|**link**|[ex02](ex02)|
+|----|----|
+
+|Required File|
+|----|
+|`whois.py`|
+
+Make a program that takes only a number.
+Print wheter the number is odd, even, zero, or somethign wrong.
+- If argument is more that one or not integer, print error message.
+- If there's no arguments, don't print something.
+
+> :bulb: Examples
+> ```shell
+> $> python3 whois.py 12
+> I'm Even.
+> $>
+> $> python3 whois.py 3
+> I'm Odd.
+> $>
+> $> python3 whois.py
+> $>
+> $> python3 whois.py 0
+> I'm Zero.
+> $>
+> $> python3 whois.py Hello
+> AssertionError: argument is not an integer
+> $>
+> $> python3 whois.py 12 3
+> AssertionError: more than one argument are provided
 > $>
 > ```
