@@ -2,7 +2,7 @@
 import sys
 from collections import Counter
 
-# parameter
+# argument
 arv = sys.argv
 arc = len(arv)
 
@@ -18,6 +18,7 @@ BOL = '\033[1m'
 UND = '\033[4m'
 
 
+# main
 def text_analyzer(_txt=None):
     '''
     This functions prints informations about input text.
