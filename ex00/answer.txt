@@ -1,0 +1,19 @@
+# listing pip's installed package
+pip  list
+pip3 list
+
+# showing package metadata of numpy
+pip  show numpy
+pip3 show numpy
+
+# removing numpy
+pip  uninstall numpy
+pip3 uninstall numpy
+
+# (re)install numpy
+pip  install --upgrade --force-reinstall numpy	# pip  install numpy
+pip3 install --upgrade --force-reinstall numpy	# pip3 install numpy
+
+# freeze(show) python package and write it to requirements.txt
+pip  freeze > requirements.txt
+pip3 freeze > requirements.txt
