@@ -98,3 +98,24 @@ Print wheter the number is odd, even, zero, or somethign wrong.
 > AssertionError: more than one argument are provided
 > $>
 > ```
+
+## Exercise 02
+|**link**|[ex02](ex02)|
+|----|----|
+
+|Required File|
+|----|
+|`count.py`|
+
+### Part 1. text_analyzer
+You must make a function `text_analyzer` that will takes a single string.
+This will print some informations about sums of upper-case charaters, lower-case characters, punctuation characters and spaces.
+- If `None` or nothing is provided, the user is prompted to provide string.
+- If the argument is not a string, print an error message.
+- This function must have a `docstring` to explain it's behavior.
+Test your program with `python` console!
+
+### Part 2. __name__ == __main__
+In the previous part, you wrote a function that can be used in console/or another file. Without changing this behavior, update your file so it can also be launched as a standalone program.
+- If more than one argument is provided to the program, print an error message.
+- Otherwise, use the `text_analyzer` funciton.
