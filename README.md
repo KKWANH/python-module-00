@@ -15,7 +15,41 @@
 - You can ask questions in [42AI](https://app.slack.com/client/T3T7KSKE3)/[42born2code](https://app.slack.com/client/T039P7U66)'s `#bootcamps` channel.
 - Any mistakes or issues? Please report 'em in [42AI's Github Channel Issue](https://github.com/42-AI/bootcamp_python/issues).
 - The project encourage you to create test programs just like old-push-swap. This means you will not be graded with the test program exists or not.
-- **Deepthought** is back also. *`jaja`*
-
 ## Exercise 00
-[ex00](ex00)
+|**link**|[ex00](ex00)|
+|----|----|
+- ***`The first thing you need to do is install Python.`***
+
+|Required File|
+|----|
+|`answer.txt`, `requirements.txt`|
+
+Recently, most of Unix-based system has already installed python. But, they could be the lower/higher version compare to our goal. Using python2.x as legacy is also common.
+```shell
+$> python -v
+$> python3 -v
+```
+To handle such a problem, we use conda. You can manage python's package and various environments.
+> :warning:
+> `Project requires you to use 3.7.X version.`
+> `You are free to use a different program/utilities to achieve this goal.`
+
+The main things that must be written in answer.txt
+- Output a list of installed packages and their versions.
+- Show the package metadata of numpy.
+- Remove the package numpy.
+- (Re)install the package numpy.
+- Freeze your python packages and their versions in a requirements.txt file you have to turn-in.
+
+## Exercise 01
+|**link**|[ex00](ex00)|
+|----|----|
+
+|Required File|
+|----|
+|`exec.py`|
+
+Make a program that takes a string.
+Reverse and swap it's letter case and print them.
+- If argument is more that one, merge them.
+- If there's no arguments, don't print something.
