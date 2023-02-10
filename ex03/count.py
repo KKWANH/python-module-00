@@ -1,12 +1,15 @@
-# importing
+# --------------------------------------------------------------------------------
+# : importing
 import sys
 from collections import Counter
 
-# argument
+# --------------------------------------------------------------------------------
+# : argument
 arv = sys.argv
 arc = len(arv)
 
-# color code
+# --------------------------------------------------------------------------------
+# : color code
 RED = '\033[91m'
 GRE = '\033[92m'
 YEL = '\033[93m'
@@ -17,8 +20,8 @@ RES = '\033[0m'
 BOL = '\033[1m'
 UND = '\033[4m'
 
-
-# main
+# --------------------------------------------------------------------------------
+# : function: text_analayzer
 def text_analyzer(_txt=None):
     '''
     This functions prints informations about input text.
@@ -57,7 +60,8 @@ def text_analyzer(_txt=None):
             f"argument is {YEL}not a string{RES}",
             file=sys.stderr)
 
-
+# --------------------------------------------------------------------------------
+# : main
 if __name__ == "__main__":
     if arc == 1:
         text_analyzer()
