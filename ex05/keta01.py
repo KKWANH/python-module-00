@@ -14,7 +14,7 @@ UND = '\033[4m'
 # : function : keta
 def ft_keta01(_dic):
 	'''
-	Display about the format of dictionary.
+	Display key-value of the dictionaries.
 	  - [paramter] _dic
 	'''
 	if isinstance(_dic, dict):
@@ -48,6 +48,10 @@ def ft_keta01(_dic):
 # --------------------------------------------------------------------------------
 # : main
 # keta variable : dictionary
+# default value:
+#	'Python': 'Guido van Rossum',
+#	'Ruby': 'Yukihiro Matsumoto',
+#	'PHP': 'Rasmus Lerdorf',
 keta = {
 	'Python': 'Guido van Rossum',
 	'Ruby': 'Yukihiro Matsumoto',
