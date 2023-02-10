@@ -25,23 +25,6 @@
 |----|
 |`answer.txt`, `requirements.txt`|
 
-Recently, most of Unix-based system has already installed python. But, they could be the lower/higher version compare to our goal. Using python2.x as legacy is also common.
-```shell
-$> python -v
-$> python3 -v
-```
-To handle such a problem, we use conda. You can manage python's package and various environments.
-> :warning:
-> `Project requires you to use 3.7.X version.`
-> `You are free to use a different program/utilities to achieve this goal.`
-
-The main things that must be written in answer.txt
-- Output a list of installed packages and their versions.
-- Show the package metadata of numpy.
-- Remove the package numpy.
-- (Re)install the package numpy.
-- Freeze your python packages and their versions in a requirements.txt file you have to turn-in.
-
 ## Exercise 01
 |**link**|[ex01](ex01)|
 |----|----|
@@ -52,18 +35,6 @@ The main things that must be written in answer.txt
 
 Make a program that takes a string.
 Reverse and swap it's letter case and print them.
-- If argument is more that one, merge them.
-- If there's no arguments, don't print something.
-
-> :bulb: Examples
-> ```shell
-> $> python3 exec.py 'Hello World!' | cat -e
-> !DLROw OLLEh$
-> $> python3 exec.py 'Hello' 'my Friend' | cat -e
-> DNEIRf YM OLLEh$
-> $> python3 exec.py
-> $>
-> ```
 
 ## Exercise 02
 |**link**|[ex02](ex02)|
@@ -75,32 +46,9 @@ Reverse and swap it's letter case and print them.
 
 Make a program that takes only a number.
 Print wheter the number is odd, even, zero, or somethign wrong.
-- If argument is more that one or not integer, print error message.
-- If there's no arguments, don't print something.
 
-> :bulb: Examples
-> ```shell
-> $> python3 whois.py 12
-> I'm Even.
-> $>
-> $> python3 whois.py 3
-> I'm Odd.
-> $>
-> $> python3 whois.py
-> $>
-> $> python3 whois.py 0
-> I'm Zero.
-> $>
-> $> python3 whois.py Hello
-> AssertionError: argument is not an integer
-> $>
-> $> python3 whois.py 12 3
-> AssertionError: more than one argument are provided
-> $>
-> ```
-
-## Exercise 02
-|**link**|[ex02](ex02)|
+## Exercise 03
+|**link**|[ex03](ex03)|
 |----|----|
 
 |Required File|
@@ -110,12 +58,36 @@ Print wheter the number is odd, even, zero, or somethign wrong.
 ### Part 1. text_analyzer
 You must make a function `text_analyzer` that will takes a single string.
 This will print some informations about sums of upper-case charaters, lower-case characters, punctuation characters and spaces.
-- If `None` or nothing is provided, the user is prompted to provide string.
-- If the argument is not a string, print an error message.
-- This function must have a `docstring` to explain it's behavior.
-Test your program with `python` console!
 
 ### Part 2. __name__ == __main__
 In the previous part, you wrote a function that can be used in console/or another file. Without changing this behavior, update your file so it can also be launched as a standalone program.
-- If more than one argument is provided to the program, print an error message.
-- Otherwise, use the `text_analyzer` funciton.
+
+## Exercise 04
+|**link**|[ex04](ex04)|
+|----|----|
+
+|Required File|
+|----|
+|`operations.py`|
+
+Write a program that takes two integers A and B as arguments and prints the result of the following operation:
+
+```shell
+Sum:        A+B
+Difference: A-B
+Product:    A*B
+Quotient:   A/B
+Remainder:  A%B
+```
+
+## Exercise 05
+|**link**|[ex05](ex05)|
+|----|----|
+
+Let’s get familiar with the useful concept of string formatting through a kata series
+
+|`keta00.py`|
+|`keta01.py`|
+|`keta02.py`|
+|`keta03.py`|
+|`keta04.py`|
