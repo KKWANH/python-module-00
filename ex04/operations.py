@@ -1,11 +1,14 @@
-# importing
+# --------------------------------------------------------------------------------
+# : import
 import sys
 
-# argument
+# --------------------------------------------------------------------------------
+# : argument
 arv = sys.argv
 arc = len(arv)
 
-# color code
+# --------------------------------------------------------------------------------
+# : color code
 RED = '\033[91m'
 GRE = '\033[92m'
 YEL = '\033[93m'
@@ -16,7 +19,8 @@ RES = '\033[0m'
 BOL = '\033[1m'
 UND = '\033[4m'
 
-# main
+# --------------------------------------------------------------------------------
+# : main
 def operations(_ar1, _ar2):
 	rst = {
 		'[Sum]       ': _ar1 + _ar2,
@@ -27,7 +31,6 @@ def operations(_ar1, _ar2):
 		'[Remainder] ': _ar1 % _ar2
 						if _ar2 else f"{RED}{BOL}[Error]{RES} modulo by zero"}
 	return rst
-
 
 if not (arc == 3):
 	sys.exit(
