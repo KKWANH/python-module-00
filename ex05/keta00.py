@@ -14,13 +14,9 @@ UND = '\033[4m'
 # : function : keta
 def ft_keta00(_tup):
 	'''
-	This functions prints informations about input text.
-	You can only input a string.
-	The types of characters that you can give:
-		- upper case
-		- lower case
-		- punctuation
-		- spaces
+	Display about the format of tuple.
+	  - [paramter] _tup
+	  	: input variable must be tuple and made by integer.
 	'''
 	if isinstance(_tup, tuple):
 		if all(isinstance(_var, int) for _var in _tup) and len(_tup):
