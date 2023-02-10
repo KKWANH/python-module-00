@@ -26,13 +26,33 @@ def ft_keta00(_tup):
 		if all(isinstance(_var, int) for _var in _tup) and len(_tup):
 			print(
 				f"{BLU}{BOL}{UND}[Keta00]{RES}",
+				f"{GRE}[Success]{RES}",
 				f"The {len(_tup)} numbers are:",
 				f"{CYA}{BOL}{UND}{', '.join([str(_var) for _var in _tup])}{RES}."
 			)
+		elif not len(_tup):
+			print(
+				f"{BLU}{BOL}{UND}[Keta00]{RES}",
+				f"{RED}[Failure]{RES}",
+				f"The {BOL}{UND}keta{RES} is {YEL}{BOL}empty{RES}."
+			)
+		else:
+			print(
+				f"{BLU}{BOL}{UND}[Keta00]{RES}",
+				f"{RED}[Failure]{RES}",
+				f"The {BOL}{UND}keta{RES} tuple's elements contains {YEL}{BOL}non-integers value{RES}."
+			)
+	else:
+		print(
+			f"{BLU}{BOL}{UND}[Keta00]{RES}",
+			f"{RED}[Failure]{RES}",
+			f"The {BOL}{UND}keta{RES} is not {YEL}{BOL}tuple{RES}."
+		)
 
 # --------------------------------------------------------------------------------
 # : main
-# keta variable : tuple, 3 values
+# keta variable : tuple, 3 integer.
+# default value : 19, 42, 21
 keta = (19, 42, 21)
 
 ft_keta00(keta)
