@@ -1,3 +1,18 @@
+# --------------------------------------------------------------------------------
+# : color code
+RED = '\033[91m'
+GRE = '\033[92m'
+YEL = '\033[93m'
+BLU = '\033[94m'
+MAG = '\033[95m'
+CYA = '\033[96m'
+RES = '\033[0m'
+BOL = '\033[1m'
+UND = '\033[4m'
+
+# --------------------------------------------------------------------------------
+# : global variable : cookbook
+
 _cookbook = {
 	"sandwich": {
 		"ingredients":	['ham', 'bread', 'cheese', 'tomatoes'],
@@ -11,118 +26,221 @@ _cookbook = {
 	},
 	"salad": {
 		"ingredients":	['avocado', 'arugula', 'tomatoes', 'spinach'],
-		"meal":			lunch",
+		"meal":			"lunch",
 		"prep_time":	15,
 	},
 }
 
+# --------------------------------------------------------------------------------
+# : function : input
 
-def get_all_recipe():
-	for key, val in _cookbook.items():
-		print('{}: {}'.format(key, val))
+def ft_input(_menu, _str):
+	print(
+		f"{BOL}{UND}{_menu}{RES}    ",
+		f"{_str}\n",
+		f"             : {CYA}",
+		end=""
+	)
+	key = input()
+	print(
+		f"{RES}",
+		end=""
+	)
+	return key
 
-def get_recipe_details():
-	key = input('Please enter a recipe name to get its details:\n')
+# --------------------------------------------------------------------------------
+# : function : getter
+
+def ft_get_recipe():
+	print(
+		f"{GRE}{BOL}{UND}[Recipes]{RES}    ",
+		f"{BOL}Available recipes:{RES}",
+	)
+	for key, _ in _cookbook.items():
+		print(
+			f"              {GRE}{key}{RES}",
+		)
+
+# --------------------------------------------------------------------------------
+# : function : getter - detail
+
+def ft_get_recipe_details():
+	key = ft_input(f"{GRE}[Recipes]", "Please input the recipe name.")
 	val = _cookbook.get(key)
 	if val:
-		print('Recip for {}:\nIngredients list: {}\nTo be eaten for {}.\n\
-				Takes {} minutes of cooking.'.format(key,
-													 val['ingredients'],
-													 val['meal'],
-													 val['prep_time']))
+		print(
+			f"{GRE}[Ingredients]{RES}",
+			f"{val['ingredients']}",
+		)
+		print(
+			f"{GRE}[Meal Type]{RES}  ",
+			f"{val['meal']}",
+		)
+		print(
+			f"{GRE}[Preparation]{RES}",
+			f"{val['prep_time']} minutes",
+		)
 	else:
-		print('Sorry, this recipe does not exist.')
+		print(
+			f"{RED}{BOL}{UND}[Error]{RES}      ",
+			f"{YEL}{BOL}Sorry, it doesn't exist.{RES} To see the list of recipes, press 4 in the option menu.",
+		)
 
+# --------------------------------------------------------------------------------
+# : function : add_recipe
 
-def delete_recipe():
-	key = input("Please enter recipe name:\n")
-	val = _cookbook.get(key)
-	if val:
-		print('success deleted')
-		_cookbook.pop(key)
-	else:
-		print('Sorry, this recipe does not exist')
-
-
-def add_new_recip():
-	name = input('Enter a name:\n')
+def ft_add_recipe():
+	name = ft_input(f"{GRE}[Recipe]", " Enter a name")
 	if not len(name):
-		print('The name is requered')
+		print(
+			f"{RED}{BOL}{UND}[Error]{RES}      ",
+			f"{YEL}{BOL}The name is mandatory.{RES}",
+		)
 		return
 
 	ings = []
-	print('Enter ingredients:')
+	print(
+		f"{BOL}{UND}{GRE}Recipe{RES}       ",
+		f"Now start to enter ingredients, press 'enter' to stop.\n",
+		end=""
+	)
 	while True:
-		ingr = input('')
+		ingr = input(f"              : {CYA}")
+		print(
+			f"{RES}",
+			end=""
+		)
 		if len(ingr):
 			ings.append(ingr)
 		else:
 			break
-	meal = input('Enter a meal type:\n')
+	meal = ft_input(f"{GRE}[Recipe]", " Enter a meal type")
 	if not len(meal):
-		print('The Type is requered')
+		print(
+			f"{RED}{BOL}{UND}[Error]{RES}      ",
+			f"{YEL}{BOL}The meal type is mandatory.{RES}",
+		)
 		return
 
-	prep = input('Enter a preparation time:\n')
+	prep = ft_input(f"{GRE}[Recipe]", " Enter a preparation time")
 	if prep.isnumeric():
 		prep = int(prep)
 		if prep < 0:
-			print('Invalid input the preparation  time is non-negative')
+			print(
+				f"{RED}{BOL}{UND}[Error]{RES}      ",
+				f"{YEL}{BOL}The input must be non-negative.{RES}",
+			)
 			return
 	else:
-		print("The preparation time is requered")
-		return
+		print(
+			f"{RED}{BOL}{UND}[Error]{RES}      ",
+			f"{YEL}{BOL}The preparation time is mandatory.{RES}",
+		)
+		return	
+
 	_cookbook[name] = {
 		'ingredients':	ings,
 		'meal':			meal,
 		'prep_time':	prep
 	}
 
-def quit_app():
-	print('cookbook closed. Goodbye !')
+# --------------------------------------------------------------------------------
+# : function : delete_recipe
+
+def ft_delete_recipe():
+	key = ft_input(f"{GRE}[Recipe]", " Please input an recipe name to delete.")
+	val = _cookbook.get(key)
+	if val:
+		print(
+			f"{GRE}{BOL}{UND}{RES}             ",
+			f"{GRE}{BOL}Deleted successfully.{RES}",
+		)
+		_cookbook.pop(key)
+	else:
+		print(
+			f"{RED}{BOL}{UND}[Error]{RES}      ",
+			f"{YEL}{BOL}Sorry, this recipe doesn't exist.{RES} To see the list of recipes, press 4 in the option menu.",
+		)
+
+# --------------------------------------------------------------------------------
+# : function : quit
+
+def ft_quit():
+	print(
+		f"{BLU}{YEL}{UND}[Quit]{RES}       ",
+		f"{BOL}The program will be closed soon. Good bye 😭{RES}"
+	)
 	quit()
+
+# --------------------------------------------------------------------------------
+# : function : help
+
+def ft_help():
+	print(
+		f"{YEL}{BOL}{UND}[Help]{RES}       ",
+		f"{BOL}{UND}Available options{RES} :"
+	)
+	for key, val in _options.items():
+		print(
+			f"{YEL}{BOL}{UND}{RES}             ",
+			f"{CYA}{BOL}{UND}[{key}]{RES}",
+			f"{MAG}{val['description']}{RES}"
+		)
+
+# --------------------------------------------------------------------------------
+# : global variables : options
 
 _options = {
 	'1': {
 		'description':	'Add a recipe',
-		'action':		add_new_recip
+		'action':		ft_add_recipe
 	},
 	'2': {
 		'description':	'Delete a recipe',
-		'action':		delete_recipe
+		'action':		ft_delete_recipe
 	},
 	'3': {
-		"description":	'Print a recipe',
-		"action":		get_recipe_details
+		"description":	'Recipe Details',
+		"action":		ft_get_recipe_details
 	},
 	'4': {
-		"description":	'Print the _cookbook',
-		"action":		get_all_recipe
+		"description":	'List of Recipes',
+		"action":		ft_get_recipe
 	},
 	'5': {
 		"description":	'Quit',
-		"action":		quit_app
+		"action":		ft_quit
+	},
+	'6': {
+		"description":	'Help',
+		"action":		ft_help
 	}
 }
 
-
-def ft_options():
-	print('List of available option:')
-	for k, v in _options.items():
-		print('  {}: {}'.format(k, v['description']))
-
+# --------------------------------------------------------------------------------
+# : functions : main entrypoint
 
 def ft_cookbook():
-	print('Welcome to the Python _cookbook !')
-	ft_options()
-	while True:
-		selcet = _options.get(input('Please select an option:\n'))
-		if selcet:
-			selcet['action']()
-		else:
-			print('Sorry, this option does not exist.')
-			ft_options()
-		print()
+	print(
+		f"{GRE}{BOL}{UND}[Entrypoint]{RES} ",
+		f"Welcome to the {BOL}{UND}Cookbook controller{RES}!",
+	)
 
+	ft_help()
+
+	while True:
+		opt = ft_input(f"{MAG}[Options]", "Please select an option. To see the list of options, press 6.")
+		sel = _options.get(opt)
+
+		if sel:
+			sel['action']()
+		else:
+			print(
+				f"{RED}{BOL}{UND}[Error]{RES}      ",
+				f"{YEL}{BOL}Sorry, it doesn't exist.{RES}",
+			)
+
+# --------------------------------------------------------------------------------
+# : main
 
 ft_cookbook()
