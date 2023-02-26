@@ -21,7 +21,7 @@ UND = '\033[4m'
 
 # --------------------------------------------------------------------------------
 # : main
-def operations(_ar1, _ar2):
+def ft_operations(_ar1, _ar2):
 	rst = {
 		'[Sum]       ': _ar1 + _ar2,
 		'[Diff]      ': _ar1 - _ar2,
@@ -34,4 +34,33 @@ def operations(_ar1, _ar2):
 
 if not (arc == 3):
 	sys.exit(
-		f"")
+		f"{MAG}{BOL}[Operations]{RES} " +
+		f"{RED}{BOL}[Failure]{RES} " +
+		f"{YEL}{BOL}[Usage]{RES}   : {UND}python operation.py <number1> <number2>\n{RES}" + 
+		f"{YEL}{BOL}            {RES} " +
+		f"{RED}{BOL}         {RES} " +
+		f"{YEL}{BOL}[Example]{RES} : {UND}python operations.py 10 3{RES}"
+	)
+else:
+	try:
+		nm1 = int(sys.argv[1])
+		nm2 = int(sys.argv[2])
+		rst = ft_operations(nm1, nm2)
+		print(
+			f"{MAG}{BOL}[Operations]{RES}",
+			f"{GRE}{BOL}[Success]{RES}",
+			f"informations"
+			
+		)
+		for key, val in rst.items():
+			print(
+				f"{YEL}{BOL}            {RES}",
+				f"{GRE}{BOL}         {RES}",
+				f"{CYA}{BOL}{key:>9}{RES} : {BOL}{val}{RES}"
+			)
+	except ValueError as exc:
+		sys.exit(
+			f"{MAG}{BOL}[Operations]{RES} " +
+			f"{RED}{BOL}[Failure]{RES} " +
+			f"{YEL}{BOL}[AssertionError]{RES} : {UND}{exc}{RES}"
+		)
