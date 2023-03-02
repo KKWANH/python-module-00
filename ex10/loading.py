@@ -28,8 +28,7 @@ def ft_progress(lst: range):
 		print(
 			f"{BLU}{BOL}{UND}[Loading]{RES}",
 			f"{RED}{BOL}[Failure]{RES}",
-			f"The terminal is too small."
-		)
+			f"The terminal is too small.")
 		exit()
 
 	for idx in new:
@@ -44,3 +43,13 @@ def ft_progress(lst: range):
 			f"{abs(idx) + 1}/{abs(end)} | elapsed time {elp:.2f}s",
 			end='\r')
 		yield idx
+
+# --------------------------------------------------------------------------------
+# : main
+listy = range(1000)
+ret = 0
+for elem in ft_progress(listy):
+	ret += (elem + 3) % 5
+	sleep(0.01)
+print()
+print(ret)

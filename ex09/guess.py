@@ -15,12 +15,23 @@ BOL = '\033[1m'
 UND = '\033[4m'
 
 # --------------------------------------------------------------------------------
-# : main
+# : global variable : answer(int)
 ans = randint(1, 99)
 
-print("This is an interactive guessing game!")
-print("You have to enter a number between 1 and 99 to find out the secret number.")
-print("Type 'exit' to end the game.\nGood luck!\n")
+# --------------------------------------------------------------------------------
+# : main
+print(
+	f"{BLU}{BOL}{UND}[Guess]{RES}",
+	f"{GRE}{BOL}{UND}[Info]{RES}  ",
+	f"{BOL}This is an interactive guessing game!{RES}")
+print(
+	f"{BLU}{BOL}       {RES}",
+	f"{CYA}{BOL}      {RES}  ",
+	f"{BOL}Type 'exit' to end the game. Good luck!{RES}")
+print(
+	f"{BLU}{BOL}       {RES}",
+	f"{CYA}{BOL}      {RES}  ",
+	f"{BOL}You have to enter a number between 1 and 99 to find out the secret number.{RES}")
 idx = 1
 while True:
 	print(
@@ -28,27 +39,23 @@ while True:
 		f"{YEL}{BOL}[Guess!]{RES} ",
 		f"What's your guess between 1 and 99?\n",
 		f"                 : {CYA}",
-		end=""
-	)
+		end='')
 	guess = input()
 	print(
 		f"{RES}",
-		end=""
-	)
+		end='')
 
 	if guess == 'exit':
 		print(
 			f"{BLU}{BOL}{UND}[Guess]{RES}",
 			f"{GRE}{BOL}[The End]{RES}",
-			f"Good Bye!"
-		)
+			f"Good Bye!")
 		break
 	if not guess.isnumeric():
 		print(
 			f"{BLU}{BOL}{UND}[Guess]{RES}",
 			f"{RED}{BOL}[Failure]{RES}",
-			f"Hmm, That seems non-integer value. Try again."
-		)
+			f"Hmm, That seems non-integer value. Try again.")
 	else:
 		if int(guess) == ans:
 			if idx == 1:
@@ -58,26 +65,22 @@ while True:
 					f"{UND}The answer to the ultimate question of life, the universe and everything is {MAG}{BOL}{ans}{RES}",
 					f"\n",
 					f"               ",
-					f"{CYA}{BOL}Congratulations!{RES} You got it on your first try!"
-				)
+					f"{CYA}{BOL}Congratulations!{RES} You got it on your first try!")
 				break
 			else:
 				print(
 					f"{BLU}{BOL}{UND}[Guess]{RES}",
 					f"{GRE}{BOL}[Success]{RES}",
-					f"{CYA}{BOL}Congratulations!{RES} You've got it in {idx} tries!"
-				)
+					f"{CYA}{BOL}Congratulations!{RES} You've got it in {idx} tries!")
 				break
 		elif int(guess) < ans:
 			print(
 				f"{BLU}{BOL}{UND}[Guess]{RES}",
 				f"{RED}{BOL}[Failure]{RES}",
-				f"That too low."
-			)
+				f"That too low.")
 		elif int(guess) > ans:
 			print(
 				f"{BLU}{BOL}{UND}[Guess]{RES}",
 				f"{RED}{BOL}[Failure]{RES}",
-				f"That too high."
-			)
+				f"That too high.")
 	idx += 1

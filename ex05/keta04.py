@@ -27,14 +27,14 @@ def ft_keta04(_tup):
 	  - [paramter] _dic
 	'''
 	if isinstance(_tup, tuple):
-		if len(_tup) == 5:
-			if all(
+		if	len(_tup) == 5:
+			if	all(
 					isinstance(_tup[_idx], int) and
 					0 <= _tup[_idx] < 100
-                	for _idx in range(2)
-				) and is_dicemal(_tup[2]
-				) and is_dicemal(_tup[4]
-				) and isinstance(_tup[3], int):
+                	for _idx in range(2)) and
+				is_dicemal(_tup[2]) and
+				is_dicemal(_tup[4]) and
+				isinstance(_tup[3], int):
 				print(
 					f"{BLU}{BOL}{UND}[Keta04]{RES}",
 					f"{GRE}[Success]{RES}",
@@ -44,8 +44,7 @@ def ft_keta04(_tup):
 						f"{_tup[2]:.2f},",
 						f"{_tup[3]:.2e},",
 						f"{_tup[4]:.2e}",
-					f"{RES}"
-				)
+					f"{RES}")
 			else:
 				print(
 					f"{BLU}{BOL}{UND}[Keta04]{RES}",
@@ -55,20 +54,17 @@ def ft_keta04(_tup):
 					f"{YEL}{BOL}{UND}<non-negative int>{RES},",
 					f"{YEL}{BOL}{UND}<decimal>{RES},",
 					f"{YEL}{BOL}{UND}<int>{RES},",
-					f"{YEL}{BOL}{UND}<decimal>{RES}.",
-				)
+					f"{YEL}{BOL}{UND}<decimal>{RES}.",)
 		else:
 			print(
 				f"{BLU}{BOL}{UND}[Keta04]{RES}",
 				f"{RED}[Failure]{RES}",
-				f"The {CYA}{BOL}{UND}[keta]{RES}'s {YEL}{BOL}length is not {BOL}5{RES}.",
-				)
+				f"The {CYA}{BOL}{UND}[keta]{RES}'s {YEL}{BOL}length is not {BOL}5{RES}.",)
 	else:
 		print(
 			f"{BLU}{BOL}{UND}[Keta04]{RES}",
 			f"{RED}[Failure]{RES}",
-			f"The {CYA}{BOL}{UND}[keta]{RES} is {YEL}{BOL}{BOL}not tuple{RES}.",
-			)
+			f"The {CYA}{BOL}{UND}[keta]{RES} is {YEL}{BOL}{BOL}not tuple{RES}.",)
 
 # --------------------------------------------------------------------------------
 # : main

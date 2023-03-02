@@ -22,8 +22,7 @@ if len(sys.argv) == 3:
 		print(
 			f"{BLU}{BOL}{UND}[Filterwords]{RES}",
 			f"{RED}{BOL}[Failure]{RES}",
-			f"second input must be integer."
-		)
+			f"second input must be integer.")
 		sys.exit()
 	min = int(sys.argv[2])
 	lst = re.sub(r'[^a-zA-Z\d\s]', '', sys.argv[1]).split()
@@ -33,19 +32,16 @@ if len(sys.argv) == 3:
 		print(
 			f"{BLU}{BOL}{UND}[Filterwords]{RES}",
 			f"{RED}{BOL}[Success]{RES}",
-			f"{rst}"
-		)
+			f"{rst}")
 	else:
 		print(
 			f"{BLU}{BOL}{UND}[Filterwords]{RES}",
 			f"{RED}{BOL}[Failure]{RES}",
-			f"words doesn't fit for the size {BOL}{min}{RES}"
-		)
+			f"words doesn't fit for the size {BOL}{min}{RES}")
 		sys.exit()
 else:
 	print(
 		f"{BLU}{BOL}{UND}[Filterwords]{RES}",
 		f"{RED}{BOL}[Failure]{RES}",
-		f"input 3 arguments"
-	)
+		f"input 3 arguments")
 	sys.exit()

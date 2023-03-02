@@ -22,14 +22,12 @@ def ft_keta03(_str):
 			f"{BLU}{BOL}{UND}[Keta03]{RES}",
 			f"{GRE}[Success]{RES}",
 			f"{UND}{_str:->42.42}{RES}",
-			end=''
-		)
+			end='')
 	else:
 		print(
 			f"{BLU}{BOL}{UND}[Keta03]{RES}",
 			f"{RED}[Failure]{RES}",
-			f"{UND}The keta is not {YEL}{BOL}string{RES}",
-		)
+			f"{UND}The keta is not {YEL}{BOL}string{RES}",)
 
 # --------------------------------------------------------------------------------
 # : main

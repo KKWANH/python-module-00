@@ -24,26 +24,22 @@ def ft_keta01(_dic):
 					f"{BLU}{BOL}{UND}[Keta01]{RES}",
 					f"{GRE}[Success]{RES}",
 					f"{CYA}{BOL}{UND}[{_key}]{RES} was created by",
-					f"{CYA}{BOL}{UND}[{_val}]{RES}."
-				)
+					f"{CYA}{BOL}{UND}[{_val}]{RES}.")
 		elif not len(_dic):
 			print(
 				f"{BLU}{BOL}{UND}[Keta01]{RES}",
 				f"{RED}[Failure]{RES}",
-				f"The {BOL}{UND}keta{RES} is {YEL}{BOL}empty{RES}."
-			)
+				f"The {BOL}{UND}keta{RES} is {YEL}{BOL}empty{RES}.")
 		else:
 			print(
 				f"{BLU}{BOL}{UND}[Keta01]{RES}",
 				f"{RED}[Failure]{RES}",
-				f"The {BOL}{UND}keta{RES} keta's elements contains {YEL}{BOL}non-string value{RES}."
-			)
+				f"The {BOL}{UND}keta{RES} keta's elements contains {YEL}{BOL}non-string value{RES}.")
 	else:
 		print(
 			f"{BLU}{BOL}{UND}[Keta01]{RES}",
 			f"{RED}[Failure]{RES}",
-			f"The {BOL}{UND}keta{RES} is not {YEL}{BOL}dictionary{RES}."
-		)
+			f"The {BOL}{UND}keta{RES} is not {YEL}{BOL}dictionary{RES}.")
 
 
 # --------------------------------------------------------------------------------

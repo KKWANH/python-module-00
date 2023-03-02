@@ -22,35 +22,37 @@ UND = '\033[4m'
 # --------------------------------------------------------------------------------
 # : main
 if arc == 1:
-    try:
-        num = int(arv[1])
-        msg = ""
-        if not num:
-            # in fact, 0 is even too.
-            print(
-                f"{GRE}{BOL}{UND}[Success]{RES}",
-                f"the number is {CYA}{BOL}0{RES},",
-                f"and also {MAG}{BOL}[EVEN]{RES}")
-            sys.exit()
-        if num % 2 == 0:
-            msg = "[Even]"
-        else:
-            msg = "[Odd]"
-        print(
-            f"{GRE}{BOL}{UND}[Success]{RES}",
-            f"the number is {CYA}{BOL}{num}{RES},",
-            f"and also {MAG}{BOL}{msg}{RES}")
-        sys.exit()
+	try:
+		num = int(arv[1])
+		msg = ""
+		if not num:
+			# in fact, 0 is even too.
+			print(
+				f"{GRE}{BOL}{UND}[Success]{RES}",
+				f"the number is {CYA}{BOL}0{RES},",
+				f"and also {MAG}{BOL}[EVEN]{RES}")
+			sys.exit()
+		if num == 0:
+			msg = "[Zero]"
+		elif num % 2 == 0:
+			msg = "[Even]"
+		else:
+			msg = "[Odd]"
+		print(
+			f"{GRE}{BOL}{UND}[Success]{RES}",
+			f"the number is {CYA}{BOL}{num}{RES},",
+			f"and also {MAG}{BOL}{msg}{RES}")
+		sys.exit()
 
-    except ValueError:
-        print(
-            f"{RED}{BOL}{UND}[Failure]{RES}",
-            f"argument is {YEL}not an integer.{RES}")
-        sys.exit()
+	except ValueError:
+		print(
+			f"{RED}{BOL}{UND}[Failure]{RES}",
+			f"argument is {YEL}not an integer.{RES}")
+		sys.exit()
 elif not arc:
-    sys.exit()
+	sys.exit()
 else:
-    print(
-        f"{RED}{BOL}{UND}[Failure]{RES}",
-        f"{YEL}more than one arguments{RES} are provided.")
-    sys.exit()
+	print(
+		f"{RED}{BOL}{UND}[Failure]{RES}",
+		f"{YEL}more than one arguments{RES} are provided.")
+	sys.exit()

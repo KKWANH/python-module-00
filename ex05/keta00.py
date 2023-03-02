@@ -24,26 +24,22 @@ def ft_keta00(_tup):
 				f"{BLU}{BOL}{UND}[Keta00]{RES}",
 				f"{GRE}[Success]{RES}",
 				f"The {len(_tup)} numbers are:",
-				f"{CYA}{BOL}{UND}{', '.join([str(_var) for _var in _tup])}{RES}."
-			)
+				f"{CYA}{BOL}{UND}{', '.join([str(_var) for _var in _tup])}{RES}.")
 		elif not len(_tup):
 			print(
 				f"{BLU}{BOL}{UND}[Keta00]{RES}",
 				f"{RED}[Failure]{RES}",
-				f"The {BOL}{UND}keta{RES} is {YEL}{BOL}empty{RES}."
-			)
+				f"The {BOL}{UND}keta{RES} is {YEL}{BOL}empty{RES}.")
 		else:
 			print(
 				f"{BLU}{BOL}{UND}[Keta00]{RES}",
 				f"{RED}[Failure]{RES}",
-				f"The {BOL}{UND}keta{RES} tuple's elements contains {YEL}{BOL}non-integers value{RES}."
-			)
+				f"The {BOL}{UND}keta{RES} tuple's elements contains {YEL}{BOL}non-integers value{RES}.")
 	else:
 		print(
 			f"{BLU}{BOL}{UND}[Keta00]{RES}",
 			f"{RED}[Failure]{RES}",
-			f"The {BOL}{UND}keta{RES} is not {YEL}{BOL}tuple{RES}."
-		)
+			f"The {BOL}{UND}keta{RES} is not {YEL}{BOL}tuple{RES}.")
 
 # --------------------------------------------------------------------------------
 # : main
